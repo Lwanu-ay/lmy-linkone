@@ -3,111 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Bio Saya</title>
-    <!-- Menggunakan Font dari Google Fonts -->
+    <title>Koleksi Buku Tere Liye | Katalog Lengkap</title>
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --bg: #f9f9f9;
+            --white: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: #87CEEB;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            background-color: var(--bg);
+            color: #333;
+            line-height: 1.6;
         }
 
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images.unsplash.com');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-weight: 300; opacity: 0.9; }
+
         .container {
-            width: 100%;
-            max-width: 400px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #eee;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .book-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .book-card p {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
             text-align: center;
         }
 
-        /* Foto Profil */
-        .profile-img {https://instagram.fmlg8-1.fna.fbcdn.net/v/t51.2885-19/604077878_17961486915001654_8262598385106073677_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44OTEuYzIifQ&_nc_ht=instagram.fmlg8-1.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QFfvV4nO7EJ_TsQmZAu4BTCImv--Z1Jk68G9YTjbU0vN2LsmNg9av7x6R_8YN4LYcg&_nc_ohc=60FY4eeSVc8Q7kNvwHV7S2p&_nc_gid=KSWVGZ3a1jrwoXVdSEbBsw&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_Afn5-Eit2kb046TtAH6wcibkgPGW8GVte_ssn_fk6asatQ&oe=69515745&_nc_sid=7d3ac5
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ffffff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);          
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: 1.25rem;
-            color: #1f2937;
-            margin-bottom: 8px;
-        }
-
-        p {
-            font-size: 0.9rem;
-            color: #6b7280;
-            margin-bottom: 24px;
-        }
-
-        /* Gaya Tombol Link */
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .link-card {
-            background-color: #ffffff;
-            color: #1f2937;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border: 1px solid #e5e7eb;
-        }
-
-        .link-card:hover {
-            transform: scale(1.02);
-            background-color: #f9fafb;
-            border-color: #d1d5db;
-        }
-
-        /* Footer */
         footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #9ca3af;
+            text-align: center;
+            padding: 40px;
+            color: #95a5a6;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Ganti URL gambar di bawah dengan foto kamu -->
-        <img src="https://www.instagram.com/hai.ulwan/" alt="Foto Profil" class="profile-img">
-        
-        <h1>@hai.ulwan</h1>
-        <p>Digital Creator | Tech Enthusiast</p>
+    <header>
+        <h1>Katalog Buku Tere Liye</h1>
+        <p>Daftar lengkap karya novelis inspiratif Indonesia "tapi maaf sebelumnya karena admin hai.ulwan salah memasukkan website ini ke daftar website tiktok, karena saya nggak punya akun tiktok-ay </p>
+         <p>Dan satu lagi kenapa saya punya nama (lwanuay) karena itu adalah kata pig latin dengan menaruh huruf depan pada suatu kata atau namamu dan menambah 'ay' ke namamu.Paham!<p2>
+    </header>
 
-        <div class="links-container">
-            <!-- Ganti href dengan link asli Anda -->
-            <a href="https://www.instagram.com/hai.ulwan/" class="link-card" target="_blank">Instagram</a>
-            <a href="tiktok.com" class="link-card" target="_blank">TikTok</a>
-            <a href="youtube.com" class="link-card" target="_blank">YouTube</a>
-            <a href="wa.me" class="link-card" target="_blank">WhatsApp Saya</a>
-            <a href="mailto:email@domain.com" class="link-card">Hubungi via Email</a>
+    <div class="container">
+        
+        <!-- Seri Dunia Paralel (Bumi) -->
+        <h2 class="category-title">Seri Dunia Paralel(seru ni) (Bumi)</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div><h3>Bumi</h3><p>Buku #1 - Awal petualangan Raib, Seli, dan Ali.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Bulan</h3><p>Buku #2 - Kompetisi di klan Matahari.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Matahari</h3><p>Buku #3 - Perjalanan ke klan Bintang.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Bintang, Ceros & Batozar, Komet, dll.</h3><p>Lanjutan saga epik dunia paralel.</p></div>
+                <a href="#" class="btn-link">Lihat Semua Seri</a>
+            </div>
         </div>
 
-        <footer>
-            &copy; 2025 Link Bio Saya
-        </footer>
+        <!-- Seri Aksi -->
+        <h2 class="category-title">Seri Aksi (Politik & Ekonomi)</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div><h3>Negeri Para Bedebah</h3><p>Kisah Thomas dalam dunia finansial yang keras.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Negeri di Ujung Tanduk</h3><p>Intrik politik dan pertarungan kekuasaan.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Pulang</h3><p>Kisah Bujang dalam dunia Shadow Economy.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Pergi</h3><p>Kelanjutan perjalanan Bujang menemukan jati diri.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- Seri Perasaan / Romansa -->
+        <h2 class="category-title">Seri Romansa & Perasaan</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div><h3>Daun yang Jatuh Tak Pernah Membenci Angin</h3><p>Kisah cinta yang tulus dan dewasa.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Hafalan Shalat Delisa</h3><p>Kisah mengharukan tentang tsunami Aceh.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Moga Bunda Disayang Allah</h3><p>Perjuangan seorang guru dan anak spesial.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+        </div>
+
+        <!-- Buku Terbaru / Lainnya -->
+        <h2 class="category-title">Karya Lainnya</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div><h3>Tentang Kamu</h3><p>Perjalanan menelusuri jejak hidup Sri Ningsih.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+            <div class="book-card">
+                <div><h3>Rembulan Tenggelam di Wajahmu</h3><p>Pertanyaan-pertanyaan besar tentang hidup.</p></div>
+                <a href="#" class="btn-link">Lihat Detail</a>
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+        <p>&copy; 2025 Katalog Penggemar Tere Liye</p>
+        <p>Dibuat untuk keperluan informasi koleksi buku.</p>
+    </footer>
 
 </body>
 </html>
-
