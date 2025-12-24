@@ -1,2 +1,2 @@
 # lmy-linkone
-hai! i can create website
+what to do now
