@@ -1,2 +1,2 @@
-# my-linkone
-what to do now
+# hai.ulwan
+namaku Ulwan Abdunnafi Humaidi 
